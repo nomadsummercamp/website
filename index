@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camp Big Daddy - Nomad Summer Camp</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- SwiperJS for Carousel -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Tally -->
+    <script async src="https://tally.so/widgets/embed.js"></script>
+
+    <style>
+        /* Custom Styles */
+        body {
+            background-color: #111827; /* A dark blue-gray */
+            color: #F3F4F6;
+            font-family: 'Inter', sans-serif;
+        }
+        .font-display {
+            font-family: 'Bebas Neue', sans-serif;
+        }
+        .hero {
+            background-image: linear-gradient(rgba(17, 24, 39, 0.7), rgba(17, 24, 39, 0.7)), url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        .video-element {
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://img.youtube.com/vi/fBdpiWri76U/maxresdefault.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .activity-tile {
+            position: relative;
+            overflow: hidden;
+        }
+        .activity-tile img {
+            transition: transform 0.4s ease;
+        }
+        .activity-tile:hover img {
+            transform: scale(1.1);
+        }
+        /* Style for the video modal */
+        .video-modal {
+            transition: opacity 0.3s ease;
+        }
+        .swiper-slide {
+            height: auto;
+        }
+        /* Masonry grid helper */
+        .break-inside-avoid {
+            break-inside: avoid;
+        }
+        .text-shadow-lg {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- 1. HERO SECTION -->
+    <header class="hero h-screen min-h-[600px] flex flex-col justify-center items-center text-center text-white p-4">
+        <div class="max-w-4xl flex flex-col items-center">
+            <div class="bg-red-500 text-white px-4 py-1 rounded-full text-sm font-semibold mb-4 inline-block">
+                🔥 30% booked out
+            </div>
+            <h1 class="font-display text-6xl md:text-8xl lg:text-9xl tracking-wider text-shadow-lg">Our Big Fat Nomad Summer Camp</h1>
+            <h2 class="text-2xl mt-2 font-light tracking-wide">Join the biggest Nomad Summer Camp ever in Cape Town</h2>
+            <button data-tally-open="mK4eAA" data-tally-layout="modal" data-tally-width="800" data-tally-align-left="1" data-tally-hide-title="1" data-tally-emoji-text="🤩" data-tally-emoji-animation="heart-beat" data-tally-form-events-forwarding="1" class="mt-8 inline-block bg-yellow-500 hover:bg-yellow-400 text-gray-900 font-display text-2xl px-12 py-4 rounded-full transition-transform duration-300 hover:scale-105 shadow-lg">
+                Reserve Spot Now
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- 2. VIDEO ELEMENT -->
+        <div class="relative z-10 -mt-8 md:-mt-24 px-4">
+            <div id="play-video" class="video-element max-w-4xl mx-auto aspect-video rounded-2xl shadow-2xl border-4 border-white/10 cursor-pointer flex justify-center items-center group">
+                <div class="bg-white/80 backdrop-blur-sm w-20 h-20 md:w-28 md:h-28 rounded-full flex justify-center items-center transition-transform duration-300 group-hover:scale-110">
+                    <svg class="w-8 h-8 md:w-12 md:h-12 text-gray-900" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- NEW QUOTE SECTION -->
+        <section class="py-20 md:py-32 text-center px-4 bg-cover bg-center" style="background-image: linear-gradient(rgba(17, 24, 39, 0.6), rgba(17, 24, 39, 0.6)), url('https://images.unsplash.com/photo-1533575292362-ac069553717a?q=80&w=1974&auto=format&fit=crop');">
+            <h2 class="font-display text-[6rem] md:text-[10rem] lg:text-[14rem] text-white italic font-bold tracking-wide text-shadow-lg leading-none">
+                Come Play, Forget The World...
+            </h2>
+        </section>
+
+        <!-- 3. WHAT IS CAMP BIG DADDY SECTION -->
+        <section class="py-20 md:py-32 text-center px-4">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="font-display text-5xl md:text-6xl text-yellow-500 tracking-wide">Say Hello 👋 To Camp Big Daddy</h2>
+                <p class="mt-6 text-lg md:text-xl text-gray-300 leading-relaxed">
+                    This isn't just another trip. It's a chance to disconnect from the daily grind and reconnect with adventure, creativity, and a tribe of like-minded people. We bring together digital nomads for an unforgettable experience packed with laughter, surprises, and that special kind of magic you only find at camp.
+                </p>
+            </div>
+        </section>
+
+        <!-- 4. INFO SECTION -->
+        <section class="pb-20 md:pb-32 px-4">
+            <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-gray-800 p-6 rounded-xl text-center transform hover:-translate-y-2 transition-transform duration-300 shadow-lg">
+                    <div class="text-yellow-500 text-3xl mb-2">📅</div>
+                    <h3 class="font-display text-2xl text-white">Dates</h3>
+                    <p class="text-gray-400">02/13/26 - 02/16/26</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-xl text-center transform hover:-translate-y-2 transition-transform duration-300 shadow-lg">
+                    <div class="text-blue-500 text-3xl mb-2">📍</div>
+                    <h3 class="font-display text-2xl text-white">Location</h3>
+                    <p class="text-gray-400">Cape Town (1h ride)</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-xl text-center transform hover:-translate-y-2 transition-transform duration-300 shadow-lg">
+                    <div class="text-orange-500 text-3xl mb-2">⏳</div>
+                    <h3 class="font-display text-2xl text-white">Duration</h3>
+                    <p class="text-gray-400">3 Nights</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-xl text-center transform hover:-translate-y-2 transition-transform duration-300 shadow-lg">
+                    <div class="text-green-500 text-3xl mb-2">✨</div>
+                    <h3 class="font-display text-2xl text-white">All Inclusive</h3>
+                    <p class="text-gray-400">Just show up & enjoy</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. SWIPABLE CAROUSEL -->
+        <section class="bg-gray-900 py-20 md:py-32 px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="font-display text-5xl md:text-6xl text-yellow-500 tracking-wide text-center mb-12">Why You Should Sign Up</h2>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <!-- Card 1 -->
+                        <div class="swiper-slide bg-gray-800 rounded-xl overflow-hidden flex flex-col md:flex-row items-center">
+                            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop" alt="Find Your Tribe" class="w-full h-64 md:w-[520px] md:h-[350px] object-cover flex-shrink-0">
+                            <div class="p-8 md:p-12 flex flex-col justify-center">
+                                <h3 class="font-display text-3xl text-purple-400">Find Your Tribe</h3>
+                                <p class="mt-4 text-gray-300">Connect with a curated group of inspiring digital nomads. These aren't just contacts; they're your future friends and collaborators.</p>
+                            </div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="swiper-slide bg-gray-800 rounded-xl overflow-hidden flex flex-col md:flex-row items-center">
+                            <img src="https://images.unsplash.com/photo-1505522259739-95a04de42333?q=80&w=1974&auto=format&fit=crop" alt="Unleash Adventure" class="w-full h-64 md:w-[520px] md:h-[350px] object-cover flex-shrink-0">
+                            <div class="p-8 md:p-12 flex flex-col justify-center">
+                                <h3 class="font-display text-3xl text-blue-400">Unleash Adventure</h3>
+                                <p class="mt-4 text-gray-300">From kayaking on crystal-clear waters to hiking scenic trails, get ready for an adrenaline-pumping schedule.</p>
+                            </div>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="swiper-slide bg-gray-800 rounded-xl overflow-hidden flex flex-col md:flex-row items-center">
+                            <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1974&auto=format&fit=crop" alt="All Inclusive" class="w-full h-64 md:w-[520px] md:h-[350px] object-cover flex-shrink-0">
+                            <div class="p-8 md:p-12 flex flex-col justify-center">
+                                <h3 class="font-display text-3xl text-green-400">Forget The Hassle</h3>
+                                <p class="mt-4 text-gray-300">We've got you covered with delicious food, refreshing drinks, and comfortable housing. Your only job is to have fun.</p>
+                            </div>
+                        </div>
+                        <!-- Card 4 -->
+                        <div class="swiper-slide bg-gray-800 rounded-xl overflow-hidden flex flex-col md:flex-row items-center">
+                            <img src="https://images.unsplash.com/photo-1530541930197-58e36e8464c1?q=80&w=2070&auto=format&fit=crop" alt="Camp Magic" class="w-full h-64 md:w-[520px] md:h-[350px] object-cover flex-shrink-0">
+                            <div class="p-8 md:p-12 flex flex-col justify-center">
+                                <h3 class="font-display text-3xl text-orange-400">Reignite Camp Magic</h3>
+                                <p class="mt-4 text-gray-300">Remember the freedom of summer camp? We're bringing it back with a grown-up twist. Expect pool games, themed parties, and more.</p>
+                            </div>
+                        </div>
+                        <!-- Card 5 -->
+                        <div class="swiper-slide bg-gray-800 rounded-xl overflow-hidden flex flex-col md:flex-row items-center">
+                            <img src="https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?q=80&w=2070&auto=format&fit=crop" alt="Disconnect to Reconnect" class="w-full h-64 md:w-[520px] md:h-[350px] object-cover flex-shrink-0">
+                            <div class="p-8 md:p-12 flex flex-col justify-center">
+                                <h3 class="font-display text-3xl text-red-400">Disconnect to Reconnect</h3>
+                                <p class="mt-4 text-gray-300">Take a break from the endless scroll. Be present, enjoy the moment, and return to your life feeling refreshed and inspired.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. ACTIVITIES SECTION -->
+        <section class="py-20 md:py-32 px-4">
+            <div class="max-w-6xl mx-auto text-center">
+                <h2 class="font-display text-5xl md:text-6xl text-yellow-500 tracking-wide mb-4">Activities Await</h2>
+                <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-12">Here are just a few of our epic camp activities. Wait till you see our surprise activities...</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+                    <!-- Activity 1 -->
+                    <div class="activity-tile rounded-xl aspect-square group">
+                        <img src="https://images.unsplash.com/photo-1599228525389-e1b2b794263a?q=80&w=1974&auto=format&fit=crop" alt="Epic Camp Games" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/60 flex flex-col justify-center items-center p-4">
+                            <h3 class="font-display text-white text-3xl">Epic Camp Games</h3>
+                            <p class="text-gray-300">Win for your team!</p>
+                        </div>
+                    </div>
+                    <!-- Activity 2 -->
+                    <div class="activity-tile rounded-xl aspect-square group">
+                        <img src="https://images.unsplash.com/photo-1508898578284-7753c803c133?q=80&w=1974&auto=format&fit=crop" alt="Campfires" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/60 flex flex-col justify-center items-center p-4">
+                            <h3 class="font-display text-white text-3xl">Campfires</h3>
+                            <p class="text-gray-300">S'mores & stories</p>
+                        </div>
+                    </div>
+                    <!-- Activity 3 -->
+                    <div class="activity-tile rounded-xl aspect-square group">
+                        <img src="https://images.unsplash.com/photo-1565992441121-4367c2967103?q=80&w=1974&auto=format&fit=crop" alt="Outdoor Galore" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/60 flex flex-col justify-center items-center p-4">
+                            <h3 class="font-display text-white text-3xl">Outdoor Galore</h3>
+                            <p class="text-gray-300">SUP, Hikes & more</p>
+                        </div>
+                    </div>
+                    <!-- Activity 4 -->
+                    <div class="activity-tile rounded-xl aspect-square group">
+                        <img src="https://images.unsplash.com/photo-1600966841333-28315c531955?q=80&w=2070&auto=format&fit=crop" alt="Crafts" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/60 flex flex-col justify-center items-center p-4">
+                            <h3 class="font-display text-white text-3xl">Crafts</h3>
+                            <p class="text-gray-300">Friendship Bracelets & Tie-Dye</p>
+                        </div>
+                    </div>
+                    <!-- Activity 5 -->
+                    <div class="activity-tile rounded-xl aspect-square group">
+                        <img src="https://images.unsplash.com/photo-1619989370959-a93355ef92a9?q=80&w=1974&auto=format&fit=crop" alt="Goofiness" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/60 flex flex-col justify-center items-center p-4">
+                            <h3 class="font-display text-white text-3xl">Goofiness</h3>
+                            <p class="text-gray-300">Unleash your inner child</p>
+                        </div>
+                    </div>
+                    <!-- Activity 6 -->
+                    <div class="activity-tile rounded-xl aspect-square group">
+                        <img src="https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?q=80&w=2070&auto=format&fit=crop" alt="Nomads Got Talent" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/60 flex flex-col justify-center items-center p-4">
+                            <h3 class="font-display text-white text-3xl">Nomads Got Talent</h3>
+                            <p class="text-gray-300">Show us what you've got!</p>
+                        </div>
+                    </div>
+                    <!-- Activity 7 -->
+                    <div class="activity-tile rounded-xl aspect-square group">
+                        <img src="https://images.unsplash.com/photo-1517457373958-b705ae89c9b7?q=80&w=2070&auto=format&fit=crop" alt="Party" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/60 flex flex-col justify-center items-center p-4">
+                            <h3 class="font-display text-white text-3xl">Party</h3>
+                            <p class="text-gray-300">Our infamous camp celebrations</p>
+                        </div>
+                    </div>
+                    <!-- Activity 8 -->
+                    <div class="activity-tile rounded-xl aspect-square group">
+                        <img src="https://images.unsplash.com/photo-1513201663849-b9a43a8536b1?q=80&w=1974&auto=format&fit=crop" alt="Surprises" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/60 flex flex-col justify-center items-center p-4">
+                            <h3 class="font-display text-white text-3xl">Surprises</h3>
+                            <p class="text-gray-300">Just you wait...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. WHAT'S INCLUDED SECTION -->
+        <section class="bg-gray-900 py-20 md:py-32 px-4">
+            <div class="max-w-5xl mx-auto text-center">
+                <h2 class="font-display text-5xl md:text-6xl text-yellow-500 tracking-wide">Everything's Covered</h2>
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+                    <div class="bg-gray-800 p-6 rounded-xl">
+                        <div class="flex items-center mb-3">
+                            <span class="text-4xl mr-4">🏠</span>
+                            <h3 class="font-display text-2xl text-white">Unique Housing</h3>
+                        </div>
+                        <p class="text-gray-400">Choose your own adventure with our unique housing. We have everything from cozy houses and tiny homes to vintage Airstream trailers and luxury glamping tents.</p>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-xl">
+                        <div class="flex items-center mb-3">
+                            <span class="text-4xl mr-4">🍔</span>
+                            <h3 class="font-display text-2xl text-white">All Food</h3>
+                        </div>
+                        <p class="text-gray-400">Fuel your adventures with delicious, chef-prepared meals. We provide a full spread for breakfast, lunch, and dinner, plus plenty of snacks to keep you going all day long.</p>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-xl">
+                        <div class="flex items-center mb-3">
+                            <span class="text-4xl mr-4">🍹</span>
+                            <h3 class="font-display text-2xl text-white">All Drinks</h3>
+                        </div>
+                        <p class="text-gray-400">Stay refreshed with our all-day open bar, including soft drinks, beer, and wine. Enjoy a glass of wine perfectly paired with your evening meals.</p>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-xl">
+                        <div class="flex items-center mb-3">
+                            <span class="text-4xl mr-4">🏄</span>
+                            <h3 class="font-display text-2xl text-white">All Activities</h3>
+                        </div>
+                        <p class="text-gray-400">That's right, everything is included. From the epic games to the surprise events, every single activity is part of your ticket. No hidden fees, no extra costs.</p>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-xl">
+                        <div class="flex items-center mb-3">
+                            <span class="text-4xl mr-4">🤝</span>
+                            <h3 class="font-display text-2xl text-white">New Friends</h3>
+                        </div>
+                        <p class="text-gray-400">Leave with more than just memories. You'll join a global family of creative, adventurous souls who will become your lifelong friends and collaborators.</p>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-xl">
+                        <div class="flex items-center mb-3">
+                            <span class="text-4xl mr-4">💖</span>
+                            <h3 class="font-display text-2xl text-white">That Camp Magic</h3>
+                        </div>
+                        <p class="text-gray-400">It's that indescribable feeling of pure joy, freedom, and connection. It's the laughter that makes your cheeks hurt and the moments you'll talk about for years to come. You just have to be there.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. TESTIMONIALS SECTION -->
+        <section class="py-20 md:py-32 px-4">
+            <div class="max-w-7xl mx-auto text-center">
+                <h2 class="font-display text-5xl md:text-6xl text-yellow-500 tracking-wide">Straight from the Campers</h2>
+                <div class="mt-12 columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
+                    <div class="break-inside-avoid bg-gray-800 rounded-xl text-left overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1974&auto=format&fit=crop" alt="Testimonial from Jeff" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <p class="text-gray-300 mb-4">“You won’t understand until you do it – and you must do it! You need it for your soul. I don’t ever want to miss another camp.”</p>
+                            <h4 class="font-bold text-lg text-white">- Jeff</h4>
+                        </div>
+                    </div>
+                    <div class="break-inside-avoid bg-gray-800 rounded-xl text-left overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1974&auto=format&fit=crop" alt="Testimonial from Heather" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <p class="text-gray-300 mb-4">“One of the best weeks of my entire life. You somehow manage to outdo yourselves every year!“</p>
+                            <h4 class="font-bold text-lg text-white">- Heather</h4>
+                        </div>
+                    </div>
+                    <div class="break-inside-avoid bg-gray-800 rounded-xl text-left overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop" alt="Testimonial from Camper Julie" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <p class="text-gray-300 mb-4">“As someone who grew up at summer camp, saying Nomad Summer Camp met all my wildest hopes and dreams – is an understatement. NSC is the most perfect way to play like we were kids, party like we were in college, and laugh like we will live forever...”</p>
+                            <h4 class="font-bold text-lg text-white">- Camper Julie</h4>
+                        </div>
+                    </div>
+                    <div class="break-inside-avoid bg-gray-800 rounded-xl text-left overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop" alt="Testimonial from MATTY" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <p class="text-gray-300 mb-4">“Nomad Summer Camp is the most fun I’ve had since I was a kid! The bestest time ever!”</p>
+                            <h4 class="font-bold text-lg text-white">- MATTY</h4>
+                        </div>
+                    </div>
+                    <div class="break-inside-avoid bg-gray-800 rounded-xl text-left overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1521119989659-a83eee488004?q=80&w=1974&auto=format&fit=crop" alt="Testimonial from Lindsey" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <p class="text-gray-300 mb-4">“Want to relive your childhood? You MUST go to Nomad Summer Camp! You’ll laugh, you’ll cry... Your adult body will probably yell at you for trying to do all of these kid games, but it’ll all be worth it.”</p>
+                            <h4 class="font-bold text-lg text-white">- Lindsey</h4>
+                        </div>
+                    </div>
+                    <div class="break-inside-avoid bg-gray-800 rounded-xl text-left overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop" alt="Testimonial from Nikki" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <p class="text-gray-300 mb-4">“I loved the team dynamics, being forced to work with new people, we always had something to do and never needed to worry about food or shopping. A week full of laughter, fun and party!“</p>
+                            <h4 class="font-bold text-lg text-white">- Nikki</h4>
+                        </div>
+                    </div>
+                     <div class="break-inside-avoid bg-gray-800 rounded-xl text-left overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1531123414780-f74242c2b052?q=80&w=1974&auto=format&fit=crop" alt="Testimonial from Becca" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <p class="text-gray-300 mb-4">“I’ve been into games my whole life... This was a whole week fun. Every day we got to wake up, eat amazing food, spend the day in the sunshine playing and getting to be silly. A great time to unplug, be creative, and laugh until your cheeks hurt. I can’t wait for next year!“</p>
+                            <h4 class="font-bold text-lg text-white">- Becca</h4>
+                        </div>
+                    </div>
+                    <div class="break-inside-avoid bg-gray-800 rounded-xl text-left overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop" alt="Testimonial from Nela" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <p class="text-gray-300 mb-4">“You will have a week in which you’ll forget about the outside world. SO much fun! Amazing friends and so many GAMES... I felt so loved and receiving so many treats every days, it was AMAZING!”</p>
+                            <h4 class="font-bold text-lg text-white">- Nela</h4>
+                        </div>
+                    </div>
+                     <div class="break-inside-avoid bg-gray-800 rounded-xl text-left overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1974&auto=format&fit=crop" alt="Testimonial from Justin" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <p class="text-gray-300 mb-4">“I loved how your group made space for both people partying all day and those taking it easy, without any stigma around it. It's hard to run a group of people with interest all over so just wanted to say good job with that.”</p>
+                            <h4 class="font-bold text-lg text-white">- Justin</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 9. FAQ SECTION -->
+        <section class="py-20 md:py-32 px-4">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="font-display text-5xl md:text-6xl text-yellow-500 tracking-wide text-center mb-12">Got Questions?</h2>
+                <div class="space-y-4">
+                    <div class="faq-item bg-gray-800 rounded-lg">
+                        <button class="faq-question w-full flex justify-between items-center text-left p-6">
+                            <span class="text-xl font-semibold text-white">What's the vibe of the camp?</span>
+                            <svg class="faq-icon w-6 h-6 text-yellow-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-answer overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
+                            <p class="p-6 pt-0 text-gray-400">Think adult summer camp meets a festival for digital nomads. It's relaxed, fun, and all about connecting with others and nature.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item bg-gray-800 rounded-lg">
+                        <button class="faq-question w-full flex justify-between items-center text-left p-6">
+                            <span class="text-xl font-semibold text-white">Do I need to be a digital nomad to join?</span>
+                            <svg class="faq-icon w-6 h-6 text-yellow-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-answer overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
+                            <p class="p-6 pt-0 text-gray-400">Not at all! We welcome anyone with a creative and adventurous spirit who's looking to connect and have a good time.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item bg-gray-800 rounded-lg">
+                        <button class="faq-question w-full flex justify-between items-center text-left p-6">
+                            <span class="text-xl font-semibold text-white">What should I pack?</span>
+                            <svg class="faq-icon w-6 h-6 text-yellow-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-answer overflow-hidden max-h-0 transition-all duration-500 ease-in-out">
+                            <p class="p-6 pt-0 text-gray-400">We'll send out a detailed packing list closer to the date, but think comfortable clothes, swimwear, something for a themed party, and an open mind!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- Video Modal -->
+    <div id="video-modal" class="video-modal fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex justify-center items-center opacity-0 pointer-events-none p-4">
+        <div class="relative w-full max-w-4xl">
+            <button id="close-modal" class="absolute -top-10 right-0 text-white text-4xl">&times;</button>
+            <div id="video-content" class="aspect-video bg-black rounded-lg">
+                <!-- YouTube iframe will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- SwiperJS Carousel Initialization ---
+        const swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+        });
+
+        // --- FAQ Accordion ---
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+            const icon = item.querySelector('.faq-icon');
+
+            question.addEventListener('click', () => {
+                const isOpen = answer.classList.contains('open');
+
+                // Close all other answers
+                document.querySelectorAll('.faq-answer.open').forEach(openAnswer => {
+                    if (openAnswer !== answer) {
+                        openAnswer.classList.remove('open');
+                        openAnswer.style.maxHeight = '0px';
+                        openAnswer.previousElementSibling.querySelector('.faq-icon').classList.remove('rotate-180');
+                    }
+                });
+                
+                // Toggle current answer
+                if (isOpen) {
+                    answer.classList.remove('open');
+                    answer.style.maxHeight = '0px';
+                    icon.classList.remove('rotate-180');
+                } else {
+                    answer.classList.add('open');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    icon.classList.add('rotate-180');
+                }
+            });
+        });
+
+        // --- Video Modal ---
+        const playButton = document.getElementById('play-video');
+        const videoModal = document.getElementById('video-modal');
+        const closeModal = document.getElementById('close-modal');
+        const videoContent = document.getElementById('video-content');
+        const videoId = 'fBdpiWri76U';
+
+        playButton.addEventListener('click', () => {
+            videoContent.innerHTML = `<iframe class="w-full h-full" src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+            videoModal.classList.remove('opacity-0', 'pointer-events-none');
+        });
+
+        const stopVideo = () => {
+            videoContent.innerHTML = '';
+            videoModal.classList.add('opacity-0', 'pointer-events-none');
+        };
+
+        closeModal.addEventListener('click', stopVideo);
+        videoModal.addEventListener('click', (e) => {
+            if (e.target === videoModal) {
+                stopVideo();
+            }
+        });
+
+    </script>
+</body>
+</html>
