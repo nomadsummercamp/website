@@ -64,6 +64,14 @@
         .text-shadow-lg {
             text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
         }
+        /* Swiper custom styles */
+        .grounds-slider .swiper-button-next, 
+        .grounds-slider .swiper-button-prev {
+            color: #FFD700; /* Yellow */
+        }
+        .grounds-slider .swiper-pagination-bullet-active {
+            background-color: #FFD700; /* Yellow */
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -141,8 +149,30 @@
         <!-- CAMP GROUNDS SECTION -->
         <section class="py-20 md:py-32 px-4">
             <div class="max-w-6xl mx-auto text-center">
-                <h2 class="font-display text-5xl md:text-6xl text-yellow-500 tracking-wide">Camp Big Daddy Grounds</h2>
-                <img src="https://googleusercontent.com/file_content/2" alt="An illustration of the Nomad Summer Camp grounds with a lake, trailers, and cabins." class="mt-12 rounded-2xl shadow-2xl w-full">
+                <h2 class="font-display text-5xl md:text-6xl text-yellow-500 tracking-wide mb-12">Camp Big Daddy Grounds</h2>
+                <!-- Slider main container -->
+                <div class="swiper grounds-slider rounded-2xl shadow-2xl">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide"><img src="grounds1.jpg" alt="Camp Grounds 1" class="w-full h-full object-cover aspect-video"></div>
+                        <div class="swiper-slide"><img src="grounds2.jpg" alt="Camp Grounds 2" class="w-full h-full object-cover aspect-video"></div>
+                        <div class="swiper-slide"><img src="grounds3.jpg" alt="Camp Grounds 3" class="w-full h-full object-cover aspect-video"></div>
+                        <div class="swiper-slide"><img src="grounds4.jpg" alt="Camp Grounds 4" class="w-full h-full object-cover aspect-video"></div>
+                        <div class="swiper-slide"><img src="grounds5.jpg" alt="Camp Grounds 5" class="w-full h-full object-cover aspect-video"></div>
+                        <div class="swiper-slide"><img src="grounds6.jpg" alt="Camp Grounds 6" class="w-full h-full object-cover aspect-video"></div>
+                        <div class="swiper-slide"><img src="grounds7.jpg" alt="Camp Grounds 7" class="w-full h-full object-cover aspect-video"></div>
+                        <div class="swiper-slide"><img src="grounds8.jpg" alt="Camp Grounds 8" class="w-full h-full object-cover aspect-video"></div>
+                        <div class="swiper-slide"><img src="grounds9.jpg" alt="Camp Grounds 9" class="w-full h-full object-cover aspect-video"></div>
+                        <div class="swiper-slide"><img src="grounds10.jpg" alt="Camp Grounds 10" class="w-full h-full object-cover aspect-video"></div>
+                        <div class="swiper-slide"><img src="grounds11.jpg" alt="Camp Grounds 11" class="w-full h-full object-cover aspect-video"></div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                    <!-- Add Navigation -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
             </div>
         </section>
 
@@ -153,68 +183,52 @@
                 <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-12">Here are just a few of our epic camp activities. Wait till you see our surprise activities...</p>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
                     <!-- Activity 1 -->
-                    <div class="activity-tile rounded-xl aspect-square group">
-                        <img src="https://images.unsplash.com/photo-1599228525389-e1b2b794263a?q=80&w=1974&auto=format&fit=crop" alt="Epic Camp Games" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-black/60 flex flex-col justify-center items-center p-4">
-                            <h3 class="font-display text-white text-3xl">Epic Camp Games</h3>
-                            <p class="text-gray-300">Win for your team!</p>
-                        </div>
+                    <div class="bg-gray-800 rounded-xl aspect-square p-4 flex flex-col justify-center items-center text-center transform hover:-translate-y-2 transition-transform duration-300">
+                        <span class="text-6xl mb-4">🏆</span>
+                        <h3 class="font-display text-white text-2xl leading-tight">Epic Camp Games</h3>
+                        <p class="text-gray-400 text-sm mt-1">Win for your team!</p>
                     </div>
                     <!-- Activity 2 -->
-                    <div class="activity-tile rounded-xl aspect-square group">
-                        <img src="https://images.unsplash.com/photo-1508898578284-7753c803c133?q=80&w=1974&auto=format&fit=crop" alt="Campfires" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-black/60 flex flex-col justify-center items-center p-4">
-                            <h3 class="font-display text-white text-3xl">Campfires</h3>
-                            <p class="text-gray-300">S'mores & stories</p>
-                        </div>
+                    <div class="bg-gray-800 rounded-xl aspect-square p-4 flex flex-col justify-center items-center text-center transform hover:-translate-y-2 transition-transform duration-300">
+                        <span class="text-6xl mb-4">🔥</span>
+                        <h3 class="font-display text-white text-2xl leading-tight">Campfires</h3>
+                        <p class="text-gray-400 text-sm mt-1">S'mores & stories</p>
                     </div>
                     <!-- Activity 3 -->
-                    <div class="activity-tile rounded-xl aspect-square group">
-                        <img src="https://images.unsplash.com/photo-1565992441121-4367c2967103?q=80&w=1974&auto=format&fit=crop" alt="Outdoor Galore" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-black/60 flex flex-col justify-center items-center p-4">
-                            <h3 class="font-display text-white text-3xl">Outdoor Galore</h3>
-                            <p class="text-gray-300">SUP, Hikes & more</p>
-                        </div>
+                    <div class="bg-gray-800 rounded-xl aspect-square p-4 flex flex-col justify-center items-center text-center transform hover:-translate-y-2 transition-transform duration-300">
+                        <span class="text-6xl mb-4">🌲</span>
+                        <h3 class="font-display text-white text-2xl leading-tight">Outdoor Galore</h3>
+                        <p class="text-gray-400 text-sm mt-1">SUP, Hikes & more</p>
                     </div>
                     <!-- Activity 4 -->
-                    <div class="activity-tile rounded-xl aspect-square group">
-                        <img src="https://images.unsplash.com/photo-1600966841333-28315c531955?q=80&w=2070&auto=format&fit=crop" alt="Crafts" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-black/60 flex flex-col justify-center items-center p-4">
-                            <h3 class="font-display text-white text-3xl">Crafts</h3>
-                            <p class="text-gray-300">Friendship Bracelets & Tie-Dye</p>
-                        </div>
+                    <div class="bg-gray-800 rounded-xl aspect-square p-4 flex flex-col justify-center items-center text-center transform hover:-translate-y-2 transition-transform duration-300">
+                        <span class="text-6xl mb-4">🎨</span>
+                        <h3 class="font-display text-white text-2xl leading-tight">Crafts</h3>
+                        <p class="text-gray-400 text-sm mt-1">Friendship Bracelets & Tie-Dye</p>
                     </div>
                     <!-- Activity 5 -->
-                    <div class="activity-tile rounded-xl aspect-square group">
-                        <img src="https://images.unsplash.com/photo-1619989370959-a93355ef92a9?q=80&w=1974&auto=format&fit=crop" alt="Goofiness" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-black/60 flex flex-col justify-center items-center p-4">
-                            <h3 class="font-display text-white text-3xl">Goofiness</h3>
-                            <p class="text-gray-300">Unleash your inner child</p>
-                        </div>
+                    <div class="bg-gray-800 rounded-xl aspect-square p-4 flex flex-col justify-center items-center text-center transform hover:-translate-y-2 transition-transform duration-300">
+                        <span class="text-6xl mb-4">🤪</span>
+                        <h3 class="font-display text-white text-2xl leading-tight">Goofiness</h3>
+                        <p class="text-gray-400 text-sm mt-1">Unleash your inner child</p>
                     </div>
                     <!-- Activity 6 -->
-                    <div class="activity-tile rounded-xl aspect-square group">
-                        <img src="https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?q=80&w=2070&auto=format&fit=crop" alt="Nomads Got Talent" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-black/60 flex flex-col justify-center items-center p-4">
-                            <h3 class="font-display text-white text-3xl">Nomads Got Talent</h3>
-                            <p class="text-gray-300">Show us what you've got!</p>
-                        </div>
+                    <div class="bg-gray-800 rounded-xl aspect-square p-4 flex flex-col justify-center items-center text-center transform hover:-translate-y-2 transition-transform duration-300">
+                        <span class="text-6xl mb-4">🎤</span>
+                        <h3 class="font-display text-white text-2xl leading-tight">Nomads Got Talent</h3>
+                        <p class="text-gray-400 text-sm mt-1">Show us what you've got!</p>
                     </div>
                     <!-- Activity 7 -->
-                    <div class="activity-tile rounded-xl aspect-square group">
-                        <img src="https://images.unsplash.com/photo-1517457373958-b705ae89c9b7?q=80&w=2070&auto=format&fit=crop" alt="Party" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-black/60 flex flex-col justify-center items-center p-4">
-                            <h3 class="font-display text-white text-3xl">Party</h3>
-                            <p class="text-gray-300">Our infamous camp celebrations</p>
-                        </div>
+                    <div class="bg-gray-800 rounded-xl aspect-square p-4 flex flex-col justify-center items-center text-center transform hover:-translate-y-2 transition-transform duration-300">
+                        <span class="text-6xl mb-4">🎉</span>
+                        <h3 class="font-display text-white text-2xl leading-tight">Party</h3>
+                        <p class="text-gray-400 text-sm mt-1">Our infamous camp celebrations</p>
                     </div>
                     <!-- Activity 8 -->
-                    <div class="activity-tile rounded-xl aspect-square group">
-                        <img src="https://images.unsplash.com/photo-1513201663849-b9a43a8536b1?q=80&w=1974&auto=format&fit=crop" alt="Surprises" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-black/60 flex flex-col justify-center items-center p-4">
-                            <h3 class="font-display text-white text-3xl">Surprises</h3>
-                            <p class="text-gray-300">Just you wait...</p>
-                        </div>
+                    <div class="bg-gray-800 rounded-xl aspect-square p-4 flex flex-col justify-center items-center text-center transform hover:-translate-y-2 transition-transform duration-300">
+                        <span class="text-6xl mb-4">🎁</span>
+                        <h3 class="font-display text-white text-2xl leading-tight">Surprises</h3>
+                        <p class="text-gray-400 text-sm mt-1">Just you wait...</p>
                     </div>
                 </div>
             </div>
@@ -277,70 +291,70 @@
                 <h2 class="font-display text-5xl md:text-6xl text-yellow-500 tracking-wide">Straight from the Campers</h2>
                 <div class="mt-12 columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
                     <div class="break-inside-avoid bg-gray-800 rounded-xl text-left overflow-hidden">
-                        <img src="testimonial-jeff.jpg?q=80&w=1974&auto=format&fit=crop" alt="Testimonial from Jeff" class="w-full h-48 object-cover">
+                        <img src="testimonial-jeff.jpg" alt="Testimonial from Jeff" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <p class="text-gray-300 mb-4">“You won’t understand until you do it – and you must do it! You need it for your soul. I don’t ever want to miss another camp.”</p>
                             <h4 class="font-bold text-lg text-white">- Jeff</h4>
                         </div>
                     </div>
                     <div class="break-inside-avoid bg-gray-800 rounded-xl text-left overflow-hidden">
-                        <img src="testimonial-heather.jpg?q=80&w=1974&auto=format&fit=crop" alt="Testimonial from Heather" class="w-full h-48 object-cover">
+                        <img src="testimonial-heather.jpg" alt="Testimonial from Heather" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <p class="text-gray-300 mb-4">“One of the best weeks of my entire life. You somehow manage to outdo yourselves every year!“</p>
                             <h4 class="font-bold text-lg text-white">- Heather</h4>
                         </div>
                     </div>
                     <div class="break-inside-avoid bg-gray-800 rounded-xl text-left overflow-hidden">
-                        <img src="testimonial-julie.jpg?q=80&w=1964&auto=format&fit=crop" alt="Testimonial from Camper Julie" class="w-full h-48 object-cover">
+                        <img src="testimonial-julie.jpg" alt="Testimonial from Camper Julie" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <p class="text-gray-300 mb-4">“As someone who grew up at summer camp, saying Nomad Summer Camp met all my wildest hopes and dreams – is an understatement. NSC is the most perfect way to play like we were kids, party like we were in college, and laugh like we will live forever...”</p>
                             <h4 class="font-bold text-lg text-white">- Julie</h4>
                         </div>
                     </div>
                     <div class="break-inside-avoid bg-gray-800 rounded-xl text-left overflow-hidden">
-                        <img src="testimonial-matty.jpg?q=80&w=1974&auto=format&fit=crop" alt="Testimonial from MATTY" class="w-full h-48 object-cover">
+                        <img src="testimonial-matty.jpg" alt="Testimonial from MATTY" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <p class="text-gray-300 mb-4">“Nomad Summer Camp is the most fun I’ve had since I was a kid! The bestest time ever!”</p>
                             <h4 class="font-bold text-lg text-white">- MATTY</h4>
                         </div>
                     </div>
                     <div class="break-inside-avoid bg-gray-800 rounded-xl text-left overflow-hidden">
-                        <img src="testimonial-lindsey.jpg?q=80&w=1974&auto=format&fit=crop" alt="Testimonial from Lindsey" class="w-full h-48 object-cover">
+                        <img src="testimonial-lindsey.jpg" alt="Testimonial from Lindsey" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <p class="text-gray-300 mb-4">“Want to relive your childhood? You MUST go to Nomad Summer Camp! You’ll laugh, you’ll cry... Your adult body will probably yell at you for trying to do all of these kid games, but it’ll all be worth it.”</p>
                             <h4 class="font-bold text-lg text-white">- Lindsey</h4>
                         </div>
                     </div>
                     <div class="break-inside-avoid bg-gray-800 rounded-xl text-left overflow-hidden">
-                        <img src="testimonial-nikki.jpg?q=80&w=1961&auto=format&fit=crop" alt="Testimonial from Nikki" class="w-full h-48 object-cover">
+                        <img src="testimonial-nikki.jpg" alt="Testimonial from Nikki" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <p class="text-gray-300 mb-4">“I loved the team dynamics, being forced to work with new people, we always had something to do and never needed to worry about food or shopping. A week full of laughter, fun and party!“</p>
                             <h4 class="font-bold text-lg text-white">- Nikki</h4>
                         </div>
                     </div>
                      <div class="break-inside-avoid bg-gray-800 rounded-xl text-left overflow-hidden">
-                        <img src="testimonial-becca.jpg?q=80&w=1974&auto=format&fit=crop" alt="Testimonial from Becca" class="w-full h-48 object-cover">
+                        <img src="testimonial-becca.jpg" alt="Testimonial from Becca" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <p class="text-gray-300 mb-4">“I’ve been into games my whole life... This was a whole week fun. Every day we got to wake up, eat amazing food, spend the day in the sunshine playing and getting to be silly. A great time to unplug, be creative, and laugh until your cheeks hurt. I can’t wait for next year!“</p>
                             <h4 class="font-bold text-lg text-white">- Becca</h4>
                         </div>
                     </div>
                     <div class="break-inside-avoid bg-gray-800 rounded-xl text-left overflow-hidden">
-                        <img src="testimonial-nela.jpg?q=80&w=2070&auto=format&fit=crop" alt="Testimonial from Nela" class="w-full h-48 object-cover">
+                        <img src="testimonial-nela.jpg" alt="Testimonial from Nela" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <p class="text-gray-300 mb-4">“You will have a week in which you’ll forget about the outside world. SO much fun! Amazing friends and so many GAMES... I felt so loved and receiving so many treats every days, it was AMAZING!”</p>
                             <h4 class="font-bold text-lg text-white">- Nela</h4>
                         </div>
                     </div>
                      <div class="break-inside-avoid bg-gray-800 rounded-xl text-left overflow-hidden">
-                        <img src="testimonial-rachel.jpg?q=80&w=1974&auto=format&fit=crop" alt="Testimonial from Rachel" class="w-full h-48 object-cover">
+                        <img src="testimonial-rachel.jpg" alt="Testimonial from Rachel" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <p class="text-gray-300 mb-4">“The most memorable experience that I can’t wait to do every year”</p>
                             <h4 class="font-bold text-lg text-white">- Rachel</h4>
                         </div>
                     </div>
                     <div class="break-inside-avoid bg-gray-800 rounded-xl text-left overflow-hidden">
-                        <img src="testimonial-danny.jpg?q=80&w=1974&auto=format&fit=crop" alt="Testimonial from Danny" class="w-full h-48 object-cover">
+                        <img src="testimonial-danny.jpg" alt="Testimonial from Danny" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <p class="text-gray-300 mb-4">“By far the best use of PTO I've had in my 5 years as a nomad”</p>
                             <h4 class="font-bold text-lg text-white">- Danny</h4>
@@ -401,9 +415,20 @@
 
     <script>
         // --- SwiperJS Carousel Initialization ---
-        const swiper = new Swiper('.swiper-container', {
-            slidesPerView: 1,
-            spaceBetween: 30,
+        const groundsSwiper = new Swiper('.grounds-slider', {
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
         });
 
         // --- FAQ Accordion ---
