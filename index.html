@@ -109,7 +109,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <header class="hero h-auto min-h-screen flex flex-col justify-center items-center text-center text-white p-4 pt-20 pb-24 md:py-32">
         <div class="max-w-5xl flex flex-col items-center">
             <div class="border border-blue-400 bg-white/10 backdrop-blur-sm text-white px-4 py-1 rounded-full text-sm font-semibold mb-4 inline-block">
-                🔥 75% booked out
+                🔥 90% booked
             </div>
             <h1 class="font-display text-6xl md:text-7xl lg:text-8xl tracking-normal text-shadow-lg">Our Big Fat Nomad Summer Camp</h1>
             <h2 class="text-xl mt-6 font-light tracking-wide">Join the biggest Nomad Summer Camp ever. Disconnect from the real world for 3 days of Camp Magic.</h2>
@@ -143,16 +143,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </header>
 
     <main>
-        <!-- 2. VIDEO ELEMENT -->
-        <div class="relative mt-20 px-4">
-            <div id="play-video" class="video-element z-10 max-w-4xl mx-auto aspect-video rounded-2xl shadow-2xl border-4 border-white/10 cursor-pointer flex justify-center items-center group">
-                <div class="bg-white/80 backdrop-blur-sm w-20 h-20 md:w-28 md:h-28 rounded-full flex justify-center items-center transition-transform duration-300 group-hover:scale-110">
-                    <svg class="w-8 h-8 md:w-12 md:h-12 text-gray-900" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
-                </div>
-            </div>
-        </div>
-
-        <!-- COME PLAY SECTION -->
+        <!-- 2. COME PLAY SECTION -->
         <section class="pt-20 md:pt-32 pb-10 md:pb-16 text-center px-4 bg-cover bg-center">
             <h2 class="font-bebas text-[6rem] md:text-[10rem] lg:text-[14rem] text-white italic font-bold tracking-wide text-shadow-lg leading-none">
                 Come Play!
@@ -491,8 +482,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <p class="text-xs text-gray-500 mt-2">Note: The shared option is for couples or friends comfortable sharing one bed.</p>
                             </div>
                         </div>
-                        <button data-tally-open="mBy2RN" data-tally-layout="modal" data-tally-width="800" class="mt-8 w-full bg-yellow-500 hover:bg-yellow-400 text-gray-900 font-display text-xl px-8 py-3 rounded-full transition-transform duration-300 hover:scale-105">
-                            Request Spot
+                        <button
+                              type="button"
+                              disabled
+                              class="mt-8 w-full bg-gray-600 text-gray-300 font-display text-xl px-8 py-3 rounded-full cursor-not-allowed opacity-70">
+                              Sold out
                         </button>
                     </div>
 
@@ -500,11 +494,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="bg-gray-800 rounded-xl p-8 flex flex-col transform hover:-translate-y-2 transition-transform duration-300 shadow-lg">
                         <div class="flex-grow">
                             <h3 class="font-display text-3xl text-white">✨ Premium</h3>
-                            <p class="text-gray-400 mt-4">Your own room in a big house with a shared common area. Bathrooms ensuite or shared.</p>
+                            <p class="text-gray-400 mt-4">Shared rooms (2 Campers) in a big house with a shared common area. Bathrooms ensuite or shared.</p>
                             <div class="mt-6 space-y-4">
                                 <div class="flex justify-between items-center">
                                     <span class="text-gray-300">Private Room</span>
-                                    <span class="font-bold text-2xl text-white">$899</span>
+                                    <span class="font-bold text-2xl text-white">Sold out</span>
                                 </div>
                                 <div class="flex justify-between items-center">
                                     <span class="text-gray-300">Shared Room<br>(per person)</span>
@@ -542,7 +536,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="bg-gray-800 rounded-xl p-8 flex flex-col transform hover:-translate-y-2 transition-transform duration-300 shadow-lg">
                         <div class="flex-grow">
                             <h3 class="font-display text-3xl text-white">🤑 Budget</h3>
-                            <p class="text-gray-400 mt-4">The most budget friendly option. A 4-bed shared room spot or a cozy tent.</p>
+                            <p class="text-gray-400 mt-4">A spot in a 4-bed female-only room in one of our villas or a cozy tent.</p>
                             <div class="mt-6 space-y-4">
                                 <div class="flex justify-between items-center">
                                     <span class="text-gray-300">Shared Room or Tent</span>
