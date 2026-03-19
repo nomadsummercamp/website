@@ -43,6 +43,12 @@
             font-family: 'Bebas Neue', sans-serif;
         }
     </style>
+    <style>
+        /* Pre-reserve nav height to prevent layout shift */
+        #nav-placeholder { height: 76px; }
+        @media (min-width: 768px) { #nav-placeholder { height: 104px; } }
+    </style>
+    <script src="/components.js" defer></script>
 </head>
 <body class="antialiased">
 
@@ -51,47 +57,7 @@
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-    <!-- NAVIGATION -->
-    <nav id="main-nav" class="sticky top-0 z-50 bg-gray-900/95 backdrop-blur-sm border-b border-white/10">
-        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-            <!-- Logo -->
-            <a href="/" class="flex items-center gap-3">
-                <img src="nsc-logo-white.png" alt="Nomad Summer Camp" class="h-10 w-10">
-            </a>
-
-            <!-- Desktop Nav Links -->
-            <div class="hidden md:flex items-center gap-8">
-                <a href="/" class="text-gray-300 hover:text-white transition-colors font-medium">Home</a>
-                <a href="/about" class="text-white font-medium">About</a>
-                <a href="/past-camps" class="text-gray-300 hover:text-white transition-colors font-medium">Past Camps</a>
-                <button data-tally-open="zxDW8M" data-tally-layout="modal" data-tally-width="800" data-tally-align-left="1" data-tally-hide-title="0" data-tally-emoji-text="🤩" data-tally-emoji-animation="heart-beat" data-tally-form-events-forwarding="1" class="bg-yellow-500 hover:bg-yellow-400 text-gray-900 font-display text-lg px-6 py-2 rounded-full transition-transform duration-300 hover:scale-105 shadow-md">
-                    Request Spot
-                </button>
-            </div>
-
-            <!-- Hamburger Button -->
-            <button id="hamburger-btn" class="md:hidden text-white p-2 rounded-lg hover:bg-white/10 transition-colors" aria-label="Toggle menu">
-                <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-                <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </button>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 border-t border-white/10 px-4 py-4 space-y-2">
-            <a href="/" class="block py-2 px-3 text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors font-medium">Home</a>
-            <a href="/about" class="block py-2 px-3 text-white bg-white/10 rounded-lg font-medium">About</a>
-            <a href="/past-camps" class="block py-2 px-3 text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors font-medium">Past Camps</a>
-            <div class="pt-2">
-                <button data-tally-open="zxDW8M" data-tally-layout="modal" data-tally-width="800" data-tally-align-left="1" data-tally-hide-title="0" data-tally-emoji-text="🤩" data-tally-emoji-animation="heart-beat" data-tally-form-events-forwarding="1" class="w-full bg-yellow-500 hover:bg-yellow-400 text-gray-900 font-display text-xl px-6 py-3 rounded-full transition-transform duration-300 hover:scale-105">
-                    Request Spot
-                </button>
-            </div>
-        </div>
-    </nav>
+    <div id="nav-placeholder"></div>
 
     <main>
 
@@ -145,7 +111,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                     <!-- Card: Ali -->
                     <div class="bg-gray-800 rounded-2xl p-8 flex flex-col gap-5 transform hover:-translate-y-1 transition-transform duration-300">
-                        <div class="w-20 h-20 rounded-full bg-gray-700 border-2 border-white/10 flex items-center justify-center text-4xl">🏕️</div>
+                        <img src="/counselor-ali.webp" alt="Ali" class="w-20 h-20 rounded-full object-cover border-2 border-white/10">
                         <div>
                             <h2 class="font-display text-3xl text-white">Ali <span class="text-2xl">🇺🇸</span></h2>
                         </div>
@@ -167,7 +133,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                     <!-- Card: Alex -->
                     <div class="bg-gray-800 rounded-2xl p-8 flex flex-col gap-5 transform hover:-translate-y-1 transition-transform duration-300">
-                        <div class="w-20 h-20 rounded-full bg-gray-700 border-2 border-white/10 flex items-center justify-center text-4xl">🏕️</div>
+                        <img src="/counselor-alex.webp" alt="Alex" class="w-20 h-20 rounded-full object-cover border-2 border-white/10">
                         <div>
                             <h2 class="font-display text-3xl text-white">Alex <span class="text-2xl">🇩🇪</span></h2>
                         </div>
@@ -189,7 +155,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                     <!-- Card: Julio -->
                     <div class="bg-gray-800 rounded-2xl p-8 flex flex-col gap-5 transform hover:-translate-y-1 transition-transform duration-300">
-                        <div class="w-20 h-20 rounded-full bg-gray-700 border-2 border-white/10 flex items-center justify-center text-4xl">🏕️</div>
+                        <img src="/counselor-julio.webp" alt="Julio" class="w-20 h-20 rounded-full object-cover border-2 border-white/10">
                         <div>
                             <h2 class="font-display text-3xl text-white">Julio <span class="text-2xl">🇨🇦</span></h2>
                         </div>
@@ -212,7 +178,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <!-- Card: Jeff 🐔 — slightly different, dashed border visual joke -->
                     <div class="rounded-2xl p-8 flex flex-col gap-5 border-2 border-dashed border-yellow-500/40 bg-gray-800/50 hover:border-yellow-500/70 transition-colors duration-300 relative">
                         <div class="absolute top-4 right-4 text-xs text-yellow-600/60 font-mono tracking-widest uppercase">honorary counselor</div>
-                        <div class="w-20 h-20 rounded-full bg-gray-700 border-2 border-dashed border-yellow-500/40 flex items-center justify-center text-4xl">🐔</div>
+                        <img src="/counselor-jeff.webp" alt="Jeff" class="w-20 h-20 rounded-full object-cover border-2 border-dashed border-yellow-500/40">
                         <div>
                             <h2 class="font-display text-3xl text-white">Jeff 🐔</h2>
                         </div>
@@ -249,43 +215,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     </main>
 
-    <!-- FOOTER -->
-    <footer class="bg-gray-900 border-t border-white/10 py-10 px-4">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-gray-400 text-sm">
-            <div class="flex items-center gap-3">
-                <img src="nsc-logo-white.png" alt="Nomad Summer Camp" class="h-8 w-8 opacity-70">
-                <span>© 2025 Nomad Summer Camp. All rights reserved.</span>
-            </div>
-            <div class="flex items-center gap-6">
-                <a href="/" class="hover:text-white transition-colors">Home</a>
-                <a href="/about" class="hover:text-white transition-colors">About</a>
-                <a href="/past-camps" class="hover:text-white transition-colors">Past Camps</a>
-                <a href="https://www.instagram.com/nomad.summercamp/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Instagram</a>
-            </div>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
-    <script>
-        // --- Hamburger Menu Toggle ---
-        const hamburgerBtn = document.getElementById('hamburger-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const hamburgerIcon = document.getElementById('hamburger-icon');
-        const closeIcon = document.getElementById('close-icon');
-
-        hamburgerBtn.addEventListener('click', () => {
-            const isOpen = !mobileMenu.classList.contains('hidden');
-            mobileMenu.classList.toggle('hidden');
-            hamburgerIcon.classList.toggle('hidden', !isOpen);
-            closeIcon.classList.toggle('hidden', isOpen);
-        });
-
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                hamburgerIcon.classList.remove('hidden');
-                closeIcon.classList.add('hidden');
-            });
-        });
-    </script>
 </body>
 </html>
