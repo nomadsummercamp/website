@@ -42,19 +42,7 @@
         .font-bebas {
             font-family: 'Bebas Neue', sans-serif;
         }
-        /* Timeline connector line */
-        .timeline-line {
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, transparent, #374151 5%, #374151 95%, transparent);
-            transform: translateX(-50%);
-        }
-        @media (max-width: 767px) {
-            .timeline-line { display: none; }
-        }
+
     </style>
     <script src="/components.js" defer></script>
 </head>
@@ -83,7 +71,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- CAMP TIMELINE -->
         <section class="px-4 pb-24 md:pb-36">
             <div class="max-w-4xl mx-auto relative">
-                <div class="timeline-line hidden md:block"></div>
 
                 <div class="space-y-10 md:space-y-16">
 
@@ -134,8 +121,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <p class="text-yellow-500 font-bebas text-3xl mt-0.5">26 campers</p>
                             </div>
                         </div>
-                        <div class="bg-gray-700/40 border-y border-white/5 flex items-center justify-center h-48 md:h-64">
-                            <p class="text-gray-500 text-sm font-medium tracking-wide">📷 Photo gallery goes here</p>
+                        <div class="border-y border-white/5">
+                            <div class="relative w-full" style="padding-bottom: 56.25%;">
+                                <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/fBdpiWri76U" title="Camp Jandala" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
                         </div>
                         <div class="px-8 py-7">
                             <p class="text-gray-300 text-lg leading-relaxed">
@@ -200,8 +189,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <p class="text-yellow-500 font-bebas text-3xl mt-0.5">56 campers</p>
                             </div>
                         </div>
-                        <div class="bg-gray-700/40 border-y border-white/5 flex items-center justify-center h-48 md:h-64">
-                            <p class="text-gray-500 text-sm font-medium tracking-wide">📷 Photo gallery goes here</p>
+                        <div class="border-y border-white/5">
+                            <div class="relative w-full" style="padding-bottom: 56.25%;">
+                                <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/j8RlL1rbtu0" title="Camp Big Daddy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
                         </div>
                         <div class="px-8 py-7">
                             <p class="text-gray-300 text-lg leading-relaxed">
