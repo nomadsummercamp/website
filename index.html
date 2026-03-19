@@ -105,6 +105,48 @@
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
+    <!-- NAVIGATION -->
+    <nav id="main-nav" class="sticky top-0 z-50 bg-gray-900/95 backdrop-blur-sm border-b border-white/10">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="nsc-logo-white.png" alt="Nomad Summer Camp" class="h-10 w-10">
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="text-gray-300 hover:text-white transition-colors font-medium">Home</a>
+                <a href="about.html" class="text-gray-300 hover:text-white transition-colors font-medium">About</a>
+                <a href="past-camps.html" class="text-gray-300 hover:text-white transition-colors font-medium">Past Camps</a>
+                <button data-tally-open="zxDW8M" data-tally-layout="modal" data-tally-width="800" data-tally-align-left="1" data-tally-hide-title="0" data-tally-emoji-text="🤩" data-tally-emoji-animation="heart-beat" data-tally-form-events-forwarding="1" class="bg-yellow-500 hover:bg-yellow-400 text-gray-900 font-display text-lg px-6 py-2 rounded-full transition-transform duration-300 hover:scale-105 shadow-md">
+                    Request Spot
+                </button>
+            </div>
+
+            <!-- Hamburger Button -->
+            <button id="hamburger-btn" class="md:hidden text-white p-2 rounded-lg hover:bg-white/10 transition-colors" aria-label="Toggle menu">
+                <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+                <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 border-t border-white/10 px-4 py-4 space-y-2">
+            <a href="index.html" class="block py-2 px-3 text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors font-medium">Home</a>
+            <a href="about.html" class="block py-2 px-3 text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors font-medium">About</a>
+            <a href="past-camps.html" class="block py-2 px-3 text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors font-medium">Past Camps</a>
+            <div class="pt-2">
+                <button data-tally-open="zxDW8M" data-tally-layout="modal" data-tally-width="800" data-tally-align-left="1" data-tally-hide-title="0" data-tally-emoji-text="🤩" data-tally-emoji-animation="heart-beat" data-tally-form-events-forwarding="1" class="w-full bg-yellow-500 hover:bg-yellow-400 text-gray-900 font-display text-xl px-6 py-3 rounded-full transition-transform duration-300 hover:scale-105">
+                    Request Spot
+                </button>
+            </div>
+        </div>
+    </nav>
+
     <!-- 1. HERO SECTION -->
     <header class="hero h-auto min-h-screen flex flex-col justify-center items-center text-center text-white p-4 pt-20 pb-24 md:py-32">
         <div class="max-w-5xl flex flex-col items-center">
@@ -659,7 +701,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </section>
 
     </main>
-    
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 border-t border-white/10 py-10 px-4">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-gray-400 text-sm">
+            <div class="flex items-center gap-3">
+                <img src="nsc-logo-white.png" alt="Nomad Summer Camp" class="h-8 w-8 opacity-70">
+                <span>© 2025 Nomad Summer Camp. All rights reserved.</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="index.html" class="hover:text-white transition-colors">Home</a>
+                <a href="about.html" class="hover:text-white transition-colors">About</a>
+                <a href="past-camps.html" class="hover:text-white transition-colors">Past Camps</a>
+                <a href="https://www.instagram.com/nomad.summercamp/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
     <!-- Video Modal -->
     <div id="video-modal" class="video-modal fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex justify-center items-center opacity-0 pointer-events-none p-4">
         <div class="relative w-full max-w-4xl">
@@ -671,6 +729,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <script>
+        // --- Hamburger Menu Toggle ---
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        hamburgerBtn.addEventListener('click', () => {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            hamburgerIcon.classList.toggle('hidden', !isOpen);
+            closeIcon.classList.toggle('hidden', isOpen);
+        });
+
+        // Close mobile menu when a link is clicked
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                hamburgerIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            });
+        });
+
         // --- SwiperJS Carousel Initialization ---
         const groundsSwiper = new Swiper('.grounds-slider', {
             loop: true,
