@@ -97,4 +97,70 @@
                 footerPlaceholder.replaceWith.apply(footerPlaceholder, Array.from(tmp.childNodes));
             });
     }
+
+    // Newsletter bottom bar + overlay
+    (function () {
+        if (localStorage.getItem('nsc-newsletter-dismissed')) return;
+
+        // Load beehiiv embed script
+        var beeScript = document.createElement('script');
+        beeScript.async = true;
+        beeScript.src = 'https://subscribe-forms.beehiiv.com/embed.js';
+        document.head.appendChild(beeScript);
+
+        // Bottom bar
+        var bar = document.createElement('div');
+        bar.id = 'newsletter-bar';
+        bar.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:40;transform:translateY(100%);transition:transform 0.4s cubic-bezier(0.16,1,0.3,1)';
+        bar.innerHTML =
+            '<div style="background:#111827;border-top:1px solid rgba(255,255,255,0.08);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;box-shadow:0 -4px 24px rgba(0,0,0,0.4)">' +
+                '<p style="color:#fff;font-weight:500;margin:0;font-size:15px">Never miss a Camp update again!</p>' +
+                '<div style="display:flex;align-items:center;gap:12px;flex-shrink:0">' +
+                    '<button id="nl-open" style="background:#EAB308;color:#111827;font-weight:600;font-size:14px;padding:8px 20px;border-radius:9999px;border:none;cursor:pointer;white-space:nowrap">Sign up for Camp newsletter</button>' +
+                    '<button id="nl-close" aria-label="Close" style="background:none;border:none;color:#9CA3AF;font-size:24px;line-height:1;cursor:pointer;padding:0 4px">&times;</button>' +
+                '</div>' +
+            '</div>';
+        document.body.appendChild(bar);
+
+        // Slide in after a short delay
+        requestAnimationFrame(function () {
+            requestAnimationFrame(function () {
+                bar.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Overlay
+        var overlay = document.createElement('div');
+        overlay.id = 'newsletter-overlay';
+        overlay.style.cssText = 'position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.8);padding:16px';
+        overlay.innerHTML =
+            '<div style="position:relative;width:100%;max-width:580px">' +
+                '<button id="nl-overlay-close" aria-label="Close" style="position:absolute;top:-40px;right:0;background:none;border:none;color:rgba(255,255,255,0.7);font-size:32px;line-height:1;cursor:pointer">&times;</button>' +
+                '<iframe src="https://subscribe-forms.beehiiv.com/113948f3-d7ae-48e5-b5d3-c490cb43e535" class="beehiiv-embed" data-test-id="beehiiv-embed" frameborder="0" scrolling="no" style="width:100%;height:321px;border-radius:10px;background-color:transparent;display:block;max-width:100%"></iframe>' +
+            '</div>';
+        document.body.appendChild(overlay);
+
+        function openOverlay() {
+            overlay.style.display = 'flex';
+        }
+        function closeOverlay() {
+            overlay.style.display = 'none';
+        }
+
+        document.getElementById('nl-open').addEventListener('click', openOverlay);
+
+        document.getElementById('nl-close').addEventListener('click', function () {
+            bar.style.transform = 'translateY(100%)';
+            setTimeout(function () { bar.remove(); }, 400);
+            localStorage.setItem('nsc-newsletter-dismissed', '1');
+        });
+
+        document.getElementById('nl-overlay-close').addEventListener('click', closeOverlay);
+        overlay.addEventListener('click', function (e) {
+            if (e.target === overlay) closeOverlay();
+        });
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closeOverlay();
+        });
+    })();
 })();
