@@ -24,11 +24,25 @@
             });
         });
 
-        // Keep nav spacer in sync with nav height
+        // Keep nav spacer in sync with nav height.
+        // We defer the first call with two rAFs so Tailwind CDN has time to
+        // apply CSS classes (h-16/h-20 on the logo) before we measure.
+        // Without this, offsetHeight reflects the logo's natural image size
+        // (often 400px+) and creates a massive gap under the nav.
         function syncSpacer() {
             navSpacer.style.height = nav.offsetHeight + 'px';
         }
-        syncSpacer();
+        requestAnimationFrame(function () {
+            requestAnimationFrame(function () {
+                syncSpacer();
+                // Re-sync once the logo image has fully loaded, just in case
+                var logoImg = nav.querySelector('img');
+                if (logoImg && !logoImg.complete) {
+                    logoImg.addEventListener('load', syncSpacer);
+                    logoImg.addEventListener('error', syncSpacer);
+                }
+            });
+        });
         window.addEventListener('resize', syncSpacer);
 
         // Scroll-hide on mobile, always visible on desktop
