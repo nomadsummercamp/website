@@ -136,6 +136,19 @@
             });
         });
 
+        // Fix mobile Chrome: position: fixed is relative to the layout viewport,
+        // not the visual viewport, so the bar drifts when browser UI shows/hides.
+        // Adjust `bottom` to match the visual viewport offset.
+        if (window.visualViewport) {
+            function syncBarPosition() {
+                var vv = window.visualViewport;
+                var offset = window.innerHeight - vv.height - vv.offsetTop;
+                bar.style.bottom = Math.max(0, offset) + 'px';
+            }
+            window.visualViewport.addEventListener('resize', syncBarPosition);
+            window.visualViewport.addEventListener('scroll', syncBarPosition);
+        }
+
         // Overlay
         var overlay = document.createElement('div');
         overlay.id = 'newsletter-overlay';
