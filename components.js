@@ -100,7 +100,7 @@
 
     // Newsletter bottom bar + overlay
     (function () {
-        if (localStorage.getItem('nsc-newsletter-dismissed')) return;
+        if (sessionStorage.getItem('nsc-newsletter-dismissed')) return;
 
         // Load beehiiv embed script
         var beeScript = document.createElement('script');
@@ -152,7 +152,7 @@
         document.getElementById('nl-close').addEventListener('click', function () {
             bar.style.transform = 'translateY(100%)';
             setTimeout(function () { bar.remove(); }, 400);
-            localStorage.setItem('nsc-newsletter-dismissed', '1');
+            sessionStorage.setItem('nsc-newsletter-dismissed', '1');
         });
 
         document.getElementById('nl-overlay-close').addEventListener('click', closeOverlay);
