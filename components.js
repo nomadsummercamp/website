@@ -108,17 +108,24 @@
         beeScript.src = 'https://subscribe-forms.beehiiv.com/embed.js';
         document.head.appendChild(beeScript);
 
+        // Bottom bar responsive styles
+        var nlStyle = document.createElement('style');
+        nlStyle.textContent =
+            '#nl-center{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;flex:1;min-width:0}' +
+            '@media(min-width:768px){#nl-center{flex-direction:row;gap:16px}}';
+        document.head.appendChild(nlStyle);
+
         // Bottom bar
         var bar = document.createElement('div');
         bar.id = 'newsletter-bar';
         bar.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:40;transform:translateY(100%);transition:transform 0.4s cubic-bezier(0.16,1,0.3,1)';
         bar.innerHTML =
-            '<div style="background:#111827;border-top:1px solid rgba(255,255,255,0.08);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;box-shadow:0 -4px 24px rgba(0,0,0,0.4)">' +
-                '<p style="color:#fff;font-weight:500;margin:0;font-size:15px">Never miss a Camp update again!</p>' +
-                '<div style="display:flex;align-items:center;gap:12px;flex-shrink:0">' +
-                    '<button id="nl-open" style="background:#EAB308;color:#111827;font-weight:600;font-size:14px;padding:8px 20px;border-radius:9999px;border:none;cursor:pointer;white-space:nowrap">Sign up for Camp newsletter</button>' +
-                    '<button id="nl-close" aria-label="Close" style="background:none;border:none;color:#9CA3AF;font-size:24px;line-height:1;cursor:pointer;padding:0 4px">&times;</button>' +
+            '<div style="background:#111827;border-top:1px solid rgba(255,255,255,0.08);padding:14px 20px;display:flex;align-items:center;position:relative;box-shadow:0 -4px 24px rgba(0,0,0,0.4)">' +
+                '<div id="nl-center">' +
+                    '<p style="color:#fff;font-weight:500;margin:0;font-size:15px;text-align:center">Never miss a Camp update again!</p>' +
+                    '<button id="nl-open" style="background:#EAB308;color:#111827;font-weight:600;font-size:14px;padding:8px 20px;border-radius:9999px;border:none;cursor:pointer;white-space:nowrap;flex-shrink:0">Sign up for Camp newsletter</button>' +
                 '</div>' +
+                '<button id="nl-close" aria-label="Close" style="position:absolute;right:16px;top:50%;transform:translateY(-50%);background:none;border:none;color:#9CA3AF;font-size:24px;line-height:1;cursor:pointer;padding:4px">&times;</button>' +
             '</div>';
         document.body.appendChild(bar);
 
