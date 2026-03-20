@@ -154,9 +154,9 @@
         overlay.id = 'newsletter-overlay';
         overlay.style.cssText = 'position:fixed;inset:0;z-index:50;display:none;align-items:flex-start;justify-content:center;background:rgba(0,0,0,0.8);padding:60px 16px 16px;overflow-y:auto';
         overlay.innerHTML =
-            '<div style="position:relative;width:100%;max-width:580px;margin:auto">' +
+            '<div style="position:relative;width:100%;max-width:580px;margin:0 auto">' +
                 '<button id="nl-overlay-close" aria-label="Close" style="position:absolute;top:-40px;right:0;background:none;border:none;color:rgba(255,255,255,0.7);font-size:32px;line-height:1;cursor:pointer">&times;</button>' +
-                '<iframe src="https://subscribe-forms.beehiiv.com/113948f3-d7ae-48e5-b5d3-c490cb43e535" class="beehiiv-embed" data-test-id="beehiiv-embed" frameborder="0" scrolling="no" style="width:100%;height:321px;border-radius:10px;background-color:transparent;display:block;max-width:100%"></iframe>' +
+                '<iframe src="https://subscribe-forms.beehiiv.com/113948f3-d7ae-48e5-b5d3-c490cb43e535" class="beehiiv-embed" data-test-id="beehiiv-embed" frameborder="0" scrolling="no" style="width:100%;height:480px;border-radius:10px;background-color:transparent;display:block;max-width:100%"></iframe>' +
             '</div>';
         document.body.appendChild(overlay);
 
